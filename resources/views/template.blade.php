@@ -24,12 +24,10 @@
     <!-- Navigation Bar  -->
     @include('navbar')
 
-    <!-- Header -->
-    @include('header')
-
-    <!-- Content Section -->
+    <!-- Content -->
     @section('contentWebsite')
     @show
+
 
     <!-- Bootstrap core JavaScript -->
     <script src="{{ url("src/vendor/jquery/jquery.min.js") }}"></script>
