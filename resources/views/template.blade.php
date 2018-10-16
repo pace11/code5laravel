@@ -17,6 +17,7 @@
     <link href="{{ url("src/vendor/magnific-popup/magnific-popup.css") }}" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="{{ url("src/css/creative.min.css") }}" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   </head>
 
   <body>

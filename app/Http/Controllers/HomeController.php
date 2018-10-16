@@ -96,11 +96,46 @@ class HomeController extends Controller
             $nilCode = substr($a[0],1);
             $code = (int) $nilCode;
             $code = $a + 1;
-            $codeAuto = "CODEREG".str_pad($code, 4, "0", STR_PAD_LEFT);
+            $codeAuto = "CODEREG".str_pad($code, 3, "0", STR_PAD_LEFT);
         } else {
-            $codeAuto = "CODEREG00001";
+            $codeAuto = "CODEREG001";
         }
         return $codeAuto;
+    }
+
+    public function checkStatus(){
+        $url = URL::current();
+        if (strpos($url,'checkstatus') !== false)
+            $pos = 'CheckStatus';
+        
+        return view('checkstatus')->with([
+            'pos' => $pos,
+        ]);
+    }
+    
+    
+    
+    public function check(Request $request){
+        if ($request->ajax()){
+            $output = "";
+
+            $dataCheck = Registration::where('id_reg',$request->checkid)->get();
+            if ($dataCheck){
+                foreach ($dataCheck as $row){
+                    $output .= "<table class='table table-hover'>";
+                    $output .= "<thead><tr>";
+                    $output .= "<th>Status</th><th>#ID Registrasi</th><th>Nama</th><th>Email</th><th>Phone</th><th>Tipe</th><th>Deskripsi TA</th><th>Deskripsi Method</th>";
+                    $output .= "</tr></thead>";
+                    $output .= "<tbody><tr>";
+                    $output .= "<td><a class='btn btn-info'><i class='fa fa-check'></i> terdaftar</a></td><td>$row->id_reg</td><td>$row->name</td><td>$row->email</td>";
+                    $output .= "<td>$row->phone</td><td>$row->type_ta</td><td>$row->desc_ta</td><td>$row->desc_method</td>";
+                    $output .= "</tr></tbody>";
+                    $output .= "</table>";
+                }
+                return Response($output);
+            }
+        }
+        
     }
 
 }
