@@ -7,12 +7,22 @@
         <h2 class="section-heading">Daftarkan diri anda</h2>
         <hr class="my-4">
         <div class="row">
+            @if (!empty($status))
+            <div class="col-md-12">
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    <strong>Maaf !!</strong> Email ini sudah terdaftar, silahkan gunakan email yang lain.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            </div>
+            @endif
             <div class="col-md-12 text-center">
             <form action="{{ route('submitRegister')}}" method="post">
                 {{csrf_field()}}
                 <div class="form-group">
                     <input type="hidden" name="code_reg" value="{{ $code_reg }}">
-                    <input type="text" class="valid form-control" name="fullname" autocomplete="off" placeholder="isikan nama ..." required/>
+                    <input type="text" class="form-control" name="fullname" autocomplete="off" placeholder="isikan nama ..." required/>
                 </div>
                 <div class="form-group">
                     <input type="email" class="form-control" name="email" autocomplete="off" placeholder="isikan alamat email ..." required/>

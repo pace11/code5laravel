@@ -12,6 +12,8 @@
 */
 
 Route::get('/','HomeController@Home');
+Route::get('/mail','MailerController@sentMail');
+Route::get('/image','MailerController@image');
 Route::get('/register','HomeController@Register');
 Route::get('/register/all','HomeController@ListRegister');
 Route::post('/register/submit', 'HomeController@SubmitRegister')->name('submitRegister');

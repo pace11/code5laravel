@@ -4,11 +4,11 @@
     <div class="container my-auto">
         <div class="row">
             <div class="col-lg-10 mx-auto">
-                <img src="{{ URL::asset("img/logo-putih.png") }}" alt="logo-code5" width="60%">
+                <img src="{{ URL::asset("img/logo-putih.png") }}" alt="logo-code5" width="80%">
                 <hr>
                 </div>
                 <div class="col-lg-8 mx-auto">
-                <p class="text-faded mb-5">Solusi bagi anda dalam membangun Aplikasi Berbasis Web maupun Mobile dengan mentoring dan P  emanfaatan Teknologi</p>
+                <p class="text-faded mb-5">Solusi bagi anda dalam membangun Aplikasi Berbasis Web maupun Mobile dengan mentoring dan Pemanfaatan Teknologi</p>
                 <a class="btn btn-primary btn-xl js-scroll-trigger" href="#about">Siapa Kami ?</a>
             </div>
         </div>
