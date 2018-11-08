@@ -23,6 +23,9 @@
                 <a class="nav-link js-scroll-trigger" href="#contact">KONTAK KAMI</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link js-scroll-trigger" href="{{ url('/faq') }}">FAQ</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link js-scroll-trigger" href="{{ url('/checkstatus') }}">CEK STATUS</a>
               </li>
             </ul>

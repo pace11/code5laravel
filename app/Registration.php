@@ -14,7 +14,12 @@ class Registration extends Model
         'phone', 
         'type_ta', 
         'desc_ta', 
-        'desc_method'
+        'desc_method',
+        'organization',
+        'desc_apps',
+        'school',
+        'campus',
+        'nim'
     ];
 
     public $timestamps = false;
